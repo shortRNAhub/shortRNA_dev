@@ -92,8 +92,6 @@ longestOrderedOverlap <- function(x) {
   x1[seq_len(j)]
 }
 
-
-
 #' fList2tree
 #'
 #' Converts a `FactorList` to a `phylo` object.
@@ -102,7 +100,8 @@ longestOrderedOverlap <- function(x) {
 #' @param addRoot Logical; whether to add a root node
 #' @param collapseSingles Logical; wether to remove intermediate nodes of single
 #' childs
-#'
+#' @importFrom ape collapse.singles
+#' 
 #' @return A `phylo` object
 #' @export
 fList2tree <- function(fL, addRoot = TRUE,
