@@ -8,7 +8,7 @@ addReadsToTree(
   fL,
   mappedFeaturesDF,
   featuresCol = "transcript_id",
-  readsCol = "seq",
+  readsCol = NULL,
   unassigned = FALSE,
   extraTreeBranch = NULL,
   ...
@@ -21,7 +21,7 @@ addReadsToTree(
 
 \item{featuresCol}{Feature name column}
 
-\item{readsCol}{Column with sequences}
+\item{readsCol}{Column with sequences, if omitted will use the row.names}
 
 \item{unassigned}{If unassigned reads to be included in the tree or not}
 

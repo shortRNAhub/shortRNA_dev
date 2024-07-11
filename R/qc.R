@@ -1,28 +1,29 @@
 #' QC of fastq files
-#' @author Deepak Tanwar (tanward@ethz.ch)
-#'
+#' 
+#' @author Deepak Tanwar
+#' 
 #' @importFrom Rfastp rfastp
 #' @importFrom parallel detectCores
-#'
+#' 
 #' @param file character vector of file names
 #' @param outDir output directory. Default: current working directory
 #' @param name character vector of output file names.
 #' @param adapterSeq Adapter sequence for read1
 #' @param adaptersFa Adapter sequence fasta file
-#' @param ... other parameters specific to \code{\link[Rfastp::rfastp]}
-#'
+#' @inheritParams Rfastp::rfastp
+#' @param ... Additional arguments passed to \code{\link[Rfastp]{rfastp}}
+#' 
 #' @return A list of results and location to the JSON results file
 #'
 #' @examples
 #' # Input
 #' fq1 <- system.file("extdata", "Fox3_Std_small.fq.gz", package = "Rfastp")
 #' outDir <- tempdir()
-#'
 #' # Analysis
 #' qc_res <- qcFastq(file = fq1, outDir = outDir)
-#'
 #' # Output
 #' qc_res
+#' 
 #' @export
 qcFastq <- function(file,
                     outDir = ".",

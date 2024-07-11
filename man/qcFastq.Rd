@@ -27,7 +27,7 @@ qcFastq(
 
 \item{adaptersFa}{Adapter sequence fasta file}
 
-\item{...}{other parameters specific to \code{\link[Rfastp::rfastp]}}
+\item{...}{Additional arguments passed to \code{\link[Rfastp]{rfastp}}}
 }
 \value{
 A list of results and location to the JSON results file
@@ -39,13 +39,12 @@ QC of fastq files
 # Input
 fq1 <- system.file("extdata", "Fox3_Std_small.fq.gz", package = "Rfastp")
 outDir <- tempdir()
-
 # Analysis
 qc_res <- qcFastq(file = fq1, outDir = outDir)
-
 # Output
 qc_res
+
 }
 \author{
-Deepak Tanwar (tanward@ethz.ch)
+Deepak Tanwar
 }

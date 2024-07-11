@@ -1,25 +1,29 @@
 Package: shortRNA
 Type: Package
-Title: Short RNA-seq analysis
-Version: 0.4.1
-Date: 2018-12-27
-Authors@R: as.person(c(
-    "Pierre-Luc Germain <germain@hifo.uzh.ch> [aut, cre]", 
-    "Deepak Tanwar <deepak.tanwar@hest.ethz.ch> [aut]"
-  ))
-Maintainer: <germain@hifo.uzh.ch>
-Description: Analysis of short RNA seq data
-License: GPL
-RoxygenNote: 7.2.3
-VignetteBuilder: rmarkdown, knitr
+Title: Short RNA-seq Analysis
+Version: 0.4.2
+Date: 2024-07-11
+Authors@R: c(
+    person("Pierre-Luc", "Germain", email = "pierre-luc.germain@hest.ethz.ch", role = c("aut", "cre")),
+    person("Deepak", "Tanwar", email = "dktanwar@hotmail.com", role = "aut")
+  )
+Maintainer: Pierre-Luc Germain <pierre-luc.germain@hest.ethz.ch>, Deepak Tanwar <dktanwar@hotmail.com>
+Description: Analysis of short RNA-seq data.
+License: GPL-3 + file LICENSE
+RoxygenNote: 7.3.1
+VignetteBuilder: knitr, rmarkdown
 Imports:
+    ape,
     AnnotationHub,
     BiocParallel,
     Biostrings,
+    BiocGenerics,
     ComplexHeatmap,
     GenomicAlignments,
     GenomicFeatures,
+    GenomeInfoDb,
     GenomicRanges,
+    httr,
     IRanges,
     R.utils,
     RColorBrewer,
@@ -56,7 +60,11 @@ Imports:
     stringr,
     tRNAdbImport,
     tidyverse
+Suggests:
+    knitr,
+    rmarkdown
+Bioconductor: true
 LazyData: true
 Depends: 
-    R (>= 2.10)
+    R (>= 4.0)
 Encoding: UTF-8

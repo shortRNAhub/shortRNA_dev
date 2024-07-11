@@ -1,6 +1,5 @@
 #' Build index for Rsubread
-#' @author Deepak Tanwar (tanward@ethz.ch)
-# @import Rsubread R.utils
+#' @author Deepak Tanwar
 #' @param fastaGenome path to a gzipped fasta file
 #' (optional if want to build genome other than mm9, mm10, hg19 or hg38).
 #' @param refGenome mm9/mm10/hg19/hg38.
@@ -10,19 +9,16 @@
 #' @param basename Basename for the Rsubread index.
 #' @param extraFasta `vector`. Additional fasta files location.
 #' @param gzExtra if additional fasta files are gzip. Default: FALSE.
-#' @param ... Other options for \code{\link[Rsubread:buildindex]}.
+#' @param ... Other options for \code{\link[Rsubread]{buildindex}}.
+#' @return `index` for aligning fastq files with Rsubread.
+#' @importFrom Rsubread buildindex
+#' @importFrom R.utils gunzip gzip
 #'
-#' @return **index** for aligning fastq files with Rsubread.
-#' 
-# @import Rsubread R.utils
-#' 
-#' \dontrun{
 #' @examples
 #' indexRsubread(
 #'   fastaGenome = "../test/reference.fa.gz",
 #'   basename = "../test/reference"
 #' )
-#' }
 #' @export
 indexRsubread <- function(fastaGenome = NULL,
                           refGenome = "mm10",
@@ -32,12 +28,15 @@ indexRsubread <- function(fastaGenome = NULL,
                           extraFasta = NULL,
                           gzExtra = FALSE,
                           ...) {
-
   # If fasta file is provided
   if (!is.null(fastaGenome)) {
     message("...building index for Rsubread...\n")
-    buildindex(basename = basename, reference = gunzip(fastaGenome), ...)
-    gzip(gsub(pattern = "\\.gz$", "", fastaGenome))
+    Rsubread::buildindex(
+      basename = basename,
+      reference = R.utils::gunzip(fastaGenome),
+      ...
+    )
+    R.utils::gzip(gsub(pattern = "\\.gz$", "", fastaGenome))
   } else {
     # If not provided
     message(paste0(
@@ -122,7 +121,7 @@ indexRsubread <- function(fastaGenome = NULL,
     }
 
     # Index building
-    buildindex(
+    Rsubread::buildindex(
       basename = paste(outPath, basename, sep = "/"),
       reference = genomeFasta, ...
     )
@@ -133,9 +132,7 @@ indexRsubread <- function(fastaGenome = NULL,
 
 
 #' Alignment using Rsubread
-#' @author Deepak Tanwar (tanward@ethz.ch)
-#'
-# @import Rsubread parallel
+#' @author Deepak Tanwar
 #'
 #' @param fastq character vector of file names.
 #' @param fastq2 in case the sequencing is paired-end.
@@ -148,11 +145,12 @@ indexRsubread <- function(fastaGenome = NULL,
 #' @param outFile basename of the output file. Default: basename of input file
 #' @param mode function to be used from Rsubread package for
 #' performing alignment. Default: align
-#' @param ... other parameters specific to \code{\link[Rsubread:align]} or
-#' \code{\link[Rsubread:subjunc]}.
+#' @param ... other parameters specific to \code{\link[Rsubread]{align}} or
+#' \code{\link[Rsubread]{subjunc}}.
 #' @return Stores a `BAM` file.
-#' 
-# @import Rsubread parallel
+#'
+#' @importFrom Rsubread align subjunc
+#' @importFrom parallel detectCores
 #'
 #' @export
 alignShortRNA <- function(fastq,
@@ -180,21 +178,18 @@ alignShortRNA <- function(fastq,
     out <- paste0(outDir, "/", o, ".bam")
   }
 
-  if (mode == "align") {
-    align(
-      index = index, readfile1 = fastq, readfile2 = fastq2,
-      nBestLocations = nBestLocations, output_file = out,
-      nthreads = nThreads, sortReadsByCoordinates = TRUE,
-      annot.ext = GTF, isGTF = gtfOption, ...
-    )
+  align_func <- if (mode == "align") {
+    Rsubread::align
   } else if (mode == "subjunc") {
-    subjunc(
-      index = index, readfile1 = fastq, readfile2 = fastq2,
-      nBestLocations = nBestLocations, output_file = out,
-      nthreads = nThreads, sortReadsByCoordinates = TRUE,
-      annot.ext = GTF, isGTF = gtfOption, ...
-    )
+    Rsubread::subjunc
   } else {
     stop("Please provide one option: align or subjunc!")
   }
+
+  align_func(
+    index = index, readfile1 = fastq, readfile2 = fastq2,
+    nBestLocations = nBestLocations, output_file = out,
+    nthreads = nThreads, sortReadsByCoordinates = TRUE,
+    annot.ext = GTF, isGTF = gtfOption, ...
+  )
 }

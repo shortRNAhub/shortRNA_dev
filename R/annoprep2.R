@@ -23,18 +23,22 @@
 #' @param ... passed to `Rsubread::buildindex`
 #'
 #' @return Produces a Rsubread index and returns a GRanglesList of features
-#' @export
 #'
 #' @import S4Vectors
 #' @importFrom GenomicRanges GRanges
 #' @importFrom IRanges IRanges overlapsAny
-#' @importFrom Biostrings DNAStringSet getSeq writeXStringSet
+#' @importFrom Biostrings DNAStringSet getSeq writeXStringSet readDNAStringSet readRNAStringSet
 #' @importFrom Rsubread buildindex
 #' @importFrom dplyr bind_rows
 #' @importFrom ensembldb genes exonsBy seqlevelsStyle getGenomeFaFile
-#' @importFrom R.utils gzip
-#' @importFrom rtracklayer import
-#' 
+#' @importFrom R.utils gzip gunzip downloadFile
+#' @importFrom rtracklayer import import.chain liftOver
+#' @importFrom plyr ldply
+#' @importFrom tRNAdbImport import.mttRNAdb
+#' @importFrom data.table fread
+#' @importFrom AnnotationHub AnnotationHub query
+#' @import httr
+#' @export
 prepareAnnotation <- function(ensdb, genome = NULL, output_dir = "",
                               extra.gr = list(), extra.seqs = NULL,
                               resolveSplicing = NULL,
@@ -465,7 +469,7 @@ gettRNA <- function(sp = "mm10", mt = TRUE, addCCA = TRUE) {
     mt_sp <- "Mus musculus"
   }
 
-  trna <- readDNAStringSet(url)
+  trna <- Biostrings::readDNAStringSet(url)
   names(trna) <- trimws(gsub(
     pattern = ".*_|\\(.*", replacement = "",
     x = names(trna)
@@ -479,14 +483,14 @@ gettRNA <- function(sp = "mm10", mt = TRUE, addCCA = TRUE) {
     his <- trna[grepl("His", names(trna))]
     his <- sapply(his, function(x) paste0("G", x))
     trna[names(his)] <- his
-    trna <- DNAStringSet(trna)
+    trna <- Biostrings::DNAStringSet(trna)
   }
 
   if (addCCA) {
     trna_CCA <- paste0(as.character(trna), "CCA")
     # names(trna_CCA) <- paste(names(trna), "CCA", sep = "_")
     names(trna_CCA) <- names(trna)
-    trna <- DNAStringSet(trna_CCA)
+    trna <- Biostrings::DNAStringSet(trna_CCA)
   }
 
   if (mt) {
@@ -719,8 +723,8 @@ getDB <- function(species = "mmu", genomeVersion = "GRCm38",
 }
 
 
-# devtools::load_all("../")
-#
+# devtools::load_all("./")
+
 # db_hg38 <- getDB(species = "hsa", genomeVersion = "GRCh38", ensemblVer = "102")
 #
 # hg38_annoprep <- prepareAnnotation(
@@ -762,13 +766,13 @@ getDB <- function(species = "mmu", genomeVersion = "GRCm38",
 #   tRNAEnsembleRemove = TRUE,
 #   clusterMiRNA = TRUE
 # )
-
-
-# devtools::load_all("./")
+# 
+# 
+# # devtools::load_all("./")
 # db_mmu <- getDB()
 # mm10_annoprep <- prepareAnnotation(
 #   ensdb = db_mmu$ensdb,
-#   genome = "/mnt/IM/reference/genome/gencode/fasta/GRCm38.p5.genome.fa",
+#   # genome = "/mnt/IM/reference/genome/gencode/fasta/GRCm38.p5.genome.fa",
 #   output_dir = "~/Desktop",
 #   extra.gr = list(piRNA = db_mmu$piRNA_GR, miRNA = db_mmu$miRNA_GR),
 #   extra.seqs = list(rRNA = db_mmu$rRNA_fa, tRNA = db_mmu$tRNA_fa),

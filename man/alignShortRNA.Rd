@@ -35,8 +35,8 @@ alignShortRNA(
 \item{mode}{function to be used from Rsubread package for
 performing alignment. Default: align}
 
-\item{...}{other parameters specific to \code{\link[Rsubread:align]} or
-\code{\link[Rsubread:subjunc]}.}
+\item{...}{other parameters specific to \code{\link[Rsubread]{align}} or
+\code{\link[Rsubread]{subjunc}}.}
 
 \item{numeric}{value specifying the maximal number of equally-best mapping
 locations that will be reported for a multi-mapping read.}
@@ -48,5 +48,5 @@ Stores a `BAM` file.
 Alignment using Rsubread
 }
 \author{
-Deepak Tanwar (tanward@ethz.ch)
+Deepak Tanwar
 }

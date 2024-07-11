@@ -32,14 +32,20 @@ indexRsubread(
 
 \item{gzExtra}{if additional fasta files are gzip. Default: FALSE.}
 
-\item{...}{Other options for \code{\link[Rsubread:buildindex]}.}
+\item{...}{Other options for \code{\link[Rsubread]{buildindex}}.}
 }
 \value{
-
+`index` for aligning fastq files with Rsubread.
 }
 \description{
 Build index for Rsubread
 }
+\examples{
+indexRsubread(
+  fastaGenome = "../test/reference.fa.gz",
+  basename = "../test/reference"
+)
+}
 \author{
-Deepak Tanwar (tanward@ethz.ch)
+Deepak Tanwar
 }
