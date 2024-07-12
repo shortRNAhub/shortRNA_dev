@@ -14,11 +14,11 @@ makeTracks(
 )
 }
 \arguments{
-\item{gr}{`GRanges` object with the genomic coordinates to be plotted}
+\item{gr}{\code{GRanges} object with the genomic coordinates to be plotted}
 
-\item{counts}{a `dataframe` of samples by features counts}
+\item{counts}{a \code{dataframe} of samples by features counts}
 
-\item{features}{`GRanges` of features}
+\item{features}{\code{GRanges} of features}
 
 \item{bamFile}{path to a BAM file}
 

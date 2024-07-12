@@ -21,23 +21,23 @@ prepareAnnotation(
 \item{ensdb}{An 'EnsDb' object, as obtained from AnnotationHub}
 
 \item{genome}{A genome fasta, BSGenome or TwoBit object. If missing, will be
-fetched using `ensdb`}
+fetched using \code{ensdb}}
 
 \item{output_dir}{The path where to save the files}
 
 \item{extra.gr}{A list of GRanges or GRangesList giving the coordinates of
 extra features. If a GRanges containing a 'type' column, exons will be used
-and split by transcript. The objects should minimally contain a `tx_id`
-field; if `tx_biotype` is missing and `extra.gr` is named, the names will be
-used as biotype. `symbol` can also be provided.}
+and split by transcript. The objects should minimally contain a \code{tx_id}
+field; if \code{tx_biotype} is missing and \code{extra.gr} is named, the names will be
+used as biotype. \code{symbol} can also be provided.}
 
 \item{extra.seqs}{Extra transcript sequences to include. Can either be a
 named list of named characters (in which case the names of the list are used
 as biotype, and the names of the character vector as tx_id), or a
-`DNAStringSet` object with `mcols` columns 'tx_id' and 'tx_biotype' (`symbol`
+\code{DNAStringSet} object with \code{mcols} columns 'tx_id' and 'tx_biotype' (\code{symbol}
 can also be provided).}
 
-\item{resolveSplicing}{The biotypes (in the `ensdb`) for which to resolve
+\item{resolveSplicing}{The biotypes (in the \code{ensdb}) for which to resolve
 splicing. If NULL, will resolve all but the low-priority (i.e. long RNA)
 transcripts.}
 
@@ -46,7 +46,7 @@ transcripts.}
 \item{tRNAEnsembleRemove}{removes the tRNA annotations from Ensembl database
 only if names of extra.seqs contains tRNA}
 
-\item{...}{passed to `Rsubread::buildindex`}
+\item{...}{passed to \code{Rsubread::buildindex}}
 }
 \value{
 Produces a Rsubread index and returns a GRanglesList of features

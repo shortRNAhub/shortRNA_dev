@@ -12,7 +12,7 @@ getReadsFromBam(bam, flag = 4, label = "unaligned")
 \item{flag}{Flag for which reads are to be obtained. Default: 4 (Unaligned)}
 }
 \value{
-A `FactorList` of reads with labels
+A \code{FactorList} of reads with labels
 }
 \description{
 Get reads from BAM file for a specific samFlag

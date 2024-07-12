@@ -468,7 +468,8 @@ gettRNA <- function(sp = "mm10", mt = TRUE, addCCA = TRUE) {
     url <- paste0(url, "Mmusc39/mm39-tRNAs.fa")
     mt_sp <- "Mus musculus"
   }
-
+  
+  # options(download.file.method="curl", download.file.extra="-k -L")
   trna <- Biostrings::readDNAStringSet(url)
   names(trna) <- trimws(gsub(
     pattern = ".*_|\\(.*", replacement = "",
@@ -636,9 +637,10 @@ getDB <- function(species = "mmu", genomeVersion = "GRCm38",
                   tRNA_addCCA = TRUE, tRNA_includeMt = TRUE,
                   rRNA_release = "138.1") {
   
-  config <- httr::config(ssl_verifypeer = 0, ssl_verifyhost = 0)
-  tt <- options()$timeout
-  options(timeout = 6000)
+  # config <- httr::config(ssl_verifypeer = 0, ssl_verifyhost = 0)
+  # tt <- options()$timeout
+  # options(timeout = 6000)
+  # options(download.file.method="curl", download.file.extra="-k -L")
   
   if (species == "mmu") {
 
@@ -652,8 +654,10 @@ getDB <- function(species = "mmu", genomeVersion = "GRCm38",
 
     # tRNA
     if (genomeVersion == "GRCm38") {
+      # options(download.file.method="curl", download.file.extra="-k -L")
       tRNA <- gettRNA(sp = "mm10", addCCA = tRNA_addCCA, mt = tRNA_includeMt)
     } else if (genomeVersion == "GRCm39") {
+      # options(download.file.method="curl", download.file.extra="-k -L")
       tRNA <- gettRNA(sp = "mm39", addCCA = tRNA_addCCA, mt = tRNA_includeMt)
     }
 
@@ -715,8 +719,8 @@ getDB <- function(species = "mmu", genomeVersion = "GRCm38",
       rRNA_fa = rRNA
     )
     
-    config <- httr::config(ssl_verifypeer = 1, ssl_verifyhost = 1)
-    options(timeout = tt)
+    # config <- httr::config(ssl_verifypeer = 1, ssl_verifyhost = 1)
+    # options(timeout = tt)
     
     return(db)
   }

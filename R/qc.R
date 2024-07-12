@@ -445,7 +445,7 @@ readDuplicationPlot <- function(json = NULL,
 #'
 #' @return An interactive plot
 #'
-#' #' @examples
+#' @examples
 #' # Input
 #' fq1 <- system.file("extdata", "Fox3_Std_small.fq.gz", package = "Rfastp")
 #' outDir <- tempdir()

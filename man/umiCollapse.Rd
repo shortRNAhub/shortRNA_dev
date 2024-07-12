@@ -5,7 +5,7 @@
 \title{umiCollapse
 This function is adapted from the code available on:
 https://github.com/BiodataAnalysisGroup/UMIc. The function is adapted as the
-original code was throwing some errors and was extremely slow for big `fastq`
+original code was throwing some errors and was extremely slow for big \code{fastq}
 files. Here, we try to make it a bit faster.}
 \usage{
 umiCollapse(
@@ -43,7 +43,7 @@ directory}
 umiCollapse
 This function is adapted from the code available on:
 https://github.com/BiodataAnalysisGroup/UMIc. The function is adapted as the
-original code was throwing some errors and was extremely slow for big `fastq`
+original code was throwing some errors and was extremely slow for big \code{fastq}
 files. Here, we try to make it a bit faster.
 }
 \examples{

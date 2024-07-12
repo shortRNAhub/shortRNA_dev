@@ -42,7 +42,7 @@ performing alignment. Default: align}
 locations that will be reported for a multi-mapping read.}
 }
 \value{
-Stores a `BAM` file.
+Stores a \code{BAM} file.
 }
 \description{
 Alignment using Rsubread

@@ -2,18 +2,18 @@
 % Please edit documentation in R/misc.R
 \name{mylapply}
 \alias{mylapply}
-\title{Run `lapply` function in parallel, if possible.}
+\title{Run \code{lapply} function in parallel, if possible.}
 \usage{
 mylapply(...)
 }
 \arguments{
-\item{any}{parameters for `lapply` or `mclapply`}
+\item{any}{parameters for \code{lapply} or \code{mclapply}}
 }
 \value{
-A `list`.
+A \code{list}.
 }
 \description{
-Run `lapply` function in parallel, if possible.
+Run \code{lapply} function in parallel, if possible.
 }
 \author{
 Deepak Tanwar (tanward@ethz.ch)

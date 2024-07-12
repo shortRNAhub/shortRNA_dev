@@ -18,7 +18,7 @@ on the reverse complement sequences}
 \item{rules}{Assignment rules (see \code{\link{defaultAssignmentRules}})}
 }
 \value{
-A logical vector of the same length as there are rows in `src`
+A logical vector of the same length as there are rows in \code{src}
 }
 \description{
 isSecondaryPiRNA

@@ -13,14 +13,14 @@ plotAdapterResults(
 )
 }
 \arguments{
-\item{o}{An object of class `adapterResults`, as produced by `tryAdapters`}
+\item{o}{An object of class \code{adapterResults}, as produced by \code{tryAdapters}}
 
 \item{showCoocurrence}{Logical; whether to plot adapter co-occurence instead
 of adapter frequency by position (default FALSE)}
 
 \item{minFreq}{Minimum frequency for an adapter to be displayed (default
 0.05). Frequency is calculated at the 4th nucleotide from the end of
- the read.}
+the read.}
 
 \item{addSeq}{Logical; whether to add the adapter sequence to the row.names.}
 

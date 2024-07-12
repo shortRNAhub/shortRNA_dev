@@ -15,8 +15,8 @@ overlapWithTx2(
 \arguments{
 \item{bamFile}{A character vector of path to BAM file.}
 
-\item{annotation}{An object of class `GRangesList`, as produced by
-`prepareAnnotation()`.}
+\item{annotation}{An object of class \code{GRangesList}, as produced by
+\code{prepareAnnotation()}.}
 
 \item{uniqueFasta}{The path to the fasta file of unique fragments (which was
 used for the alignment). This will is optional, but will be used to
@@ -27,7 +27,7 @@ overlaps. By default, strand is ignored and considered later on at the read
 assignment stage.}
 
 \item{nbthreads}{A positive integer indicating the number of threads to use.
-Defaults to `min(c(8, bpworkers()))`.}
+Defaults to \code{min(c(8, bpworkers()))}.}
 }
 \value{
 A data.table.

@@ -13,7 +13,7 @@ isValidOverlap(srcs, rules = defaultAssignRules)
 \item{rules}{Assignment rules (see \code{\link{defaultAssignmentRules}})}
 }
 \value{
-A logical vector of the same length as there are rows in `srcs`
+A logical vector of the same length as there are rows in \code{srcs}
 }
 \description{
 isValidOverlap

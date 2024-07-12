@@ -1,40 +1,29 @@
-Package: shortRNA
 Type: Package
+Package: shortRNA
 Title: Short RNA-seq Analysis
 Version: 0.4.2
 Date: 2024-07-11
 Authors@R: c(
-    person("Pierre-Luc", "Germain", email = "pierre-luc.germain@hest.ethz.ch", role = c("aut", "cre")),
-    person("Deepak", "Tanwar", email = "dktanwar@hotmail.com", role = "aut")
+    person("Pierre-Luc", "Germain", , "pierre-luc.germain@hest.ethz.ch", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-3418-4218")),
+    person("Deepak", "Tanwar", , "dktanwar@hotmail.com", role = "aut",
+           comment = c(ORCID = "0000-0001-8036-1989"))
   )
-Maintainer: Pierre-Luc Germain <pierre-luc.germain@hest.ethz.ch>, Deepak Tanwar <dktanwar@hotmail.com>
+Maintainer: Pierre-Luc Germain <pierre-luc.germain@hest.ethz.ch>, Deepak
+    Tanwar <dktanwar@hotmail.com>
 Description: Analysis of short RNA-seq data.
 License: GPL-3 + file LICENSE
-RoxygenNote: 7.3.1
-VignetteBuilder: knitr, rmarkdown
+URL: https://github.com/shortRNAhub/shortRNA
+BugReports: https://github.com/shortRNAhub/shortRNA/issues
+Depends: 
+    R (>= 4.0)
 Imports:
-    ape,
     AnnotationHub,
+    ape,
+    BiocGenerics,
     BiocParallel,
     Biostrings,
-    BiocGenerics,
     ComplexHeatmap,
-    GenomicAlignments,
-    GenomicFeatures,
-    GenomeInfoDb,
-    GenomicRanges,
-    httr,
-    IRanges,
-    R.utils,
-    RColorBrewer,
-    RCurl,
-    Rbowtie2,
-    Rfastp,
-    Rsamtools,
-    Rsubread,
-    S4Vectors,
-    ShortRead,
-    XML,
     cowplot,
     data.table,
     data.tree,
@@ -43,28 +32,46 @@ Imports:
     ensembldb,
     futile.logger,
     future.apply,
+    GenomeInfoDb,
+    GenomicAlignments,
+    GenomicFeatures,
+    GenomicRanges,
     ggbio,
     ggplot2,
+    httr,
+    IRanges,
     parallel,
     plotly,
     plyr,
     pryr,
     qckitfastq,
+    R.utils,
+    Rbowtie2,
     rcartocolor,
+    RColorBrewer,
+    RCurl,
+    Rfastp,
     rjson,
+    Rsamtools,
+    Rsubread,
     rtracklayer,
+    S4Vectors,
     scales,
     seqTools,
+    ShortRead,
     stringdist,
     stringi,
     stringr,
     tRNAdbImport,
-    tidyverse
+    XML
 Suggests:
     knitr,
     rmarkdown
+VignetteBuilder: 
+    knitr,
+    rmarkdown
 Bioconductor: true
-LazyData: true
-Depends: 
-    R (>= 4.0)
 Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1

@@ -2,22 +2,22 @@
 % Please edit documentation in R/treeFL.R
 \name{featuresAnnoToFL}
 \alias{featuresAnnoToFL}
-\title{Convert the annotation GRanges (obtained from `prepareAnnotation` function)
- to a Factor List}
+\title{Convert the annotation GRanges (obtained from \code{prepareAnnotation} function)
+to a Factor List}
 \usage{
 featuresAnnoToFL(anno, species = "mm10")
 }
 \arguments{
-\item{anno}{GRanges annotation obtained from `prepareAnnotation()`}
+\item{anno}{GRanges annotation obtained from \code{prepareAnnotation()}}
 
 \item{species}{name for the root of the tree}
 }
 \value{
-A `FactorList`
+A \code{FactorList}
 }
 \description{
-Convert the annotation GRanges (obtained from `prepareAnnotation` function)
- to a Factor List
+Convert the annotation GRanges (obtained from \code{prepareAnnotation} function)
+to a Factor List
 }
 \author{
 Deepak Tanwar (tanward@ethz.ch)

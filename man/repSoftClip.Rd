@@ -7,10 +7,10 @@
 repSoftClip(GA)
 }
 \arguments{
-\item{GA}{`GAlignment file`}
+\item{GA}{\verb{GAlignment file}}
 }
 \value{
-`GRanges`
+\code{GRanges}
 }
 \description{
 Dealing with soft-clipping

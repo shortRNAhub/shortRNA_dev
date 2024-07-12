@@ -30,7 +30,7 @@ readsQualityPlot(
 
 \item{Cc}{Column with Cytosine quality score}
 
-\item{meanQual}{Column with `mean` quality score}
+\item{meanQual}{Column with \code{mean} quality score}
 }
 \value{
 An interactive plot

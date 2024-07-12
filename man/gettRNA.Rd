@@ -11,7 +11,7 @@ gettRNA(sp = "mm10", mt = TRUE, addCCA = TRUE)
 available for mm10, mm39, hg19, and hg38}
 
 \item{mt}{Whether to also download and include mitochondrial tRNAs from
-mitotRNA database. Please see also `getMttRNA`}
+mitotRNA database. Please see also \code{getMttRNA}}
 
 \item{addCCA}{Whether to add CCA modifications to sequences or not.}
 }

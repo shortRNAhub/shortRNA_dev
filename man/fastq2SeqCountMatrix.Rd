@@ -38,9 +38,9 @@ yet entirely supported by downstream functions)}
 }
 \value{
 a matrix, with unique sequences as rows and samples (i.e. file
-  basenames) as column.
+basenames) as column.
 }
 \description{
-Collapses a set of `.fastq` (or `fastq.gz`) files to a matrix of counts per
- unique sequence.
+Collapses a set of \code{.fastq} (or \code{fastq.gz}) files to a matrix of counts per
+unique sequence.
 }

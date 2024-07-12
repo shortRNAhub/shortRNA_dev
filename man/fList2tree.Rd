@@ -7,7 +7,7 @@
 fList2tree(fL, addRoot = TRUE, collapseSingles = FALSE, root = "ROOT")
 }
 \arguments{
-\item{fL}{A `FactorList` object}
+\item{fL}{A \code{FactorList} object}
 
 \item{addRoot}{Logical; whether to add a root node}
 
@@ -15,8 +15,8 @@ fList2tree(fL, addRoot = TRUE, collapseSingles = FALSE, root = "ROOT")
 childs}
 }
 \value{
-A `phylo` object
+A \code{phylo} object
 }
 \description{
-Converts a `FactorList` to a `phylo` object.
+Converts a \code{FactorList} to a \code{phylo} object.
 }

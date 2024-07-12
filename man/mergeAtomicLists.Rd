@@ -7,12 +7,12 @@
 mergeAtomicLists(x, y)
 }
 \arguments{
-\item{x}{An `AtomicList` object}
+\item{x}{An \code{AtomicList} object}
 
-\item{y}{An `AtomicList` object}
+\item{y}{An \code{AtomicList} object}
 }
 \value{
-An `AtomicList` object of the same length as `x` and `y`
+An \code{AtomicList} object of the same length as \code{x} and \code{y}
 }
 \description{
 Pairwise merging of two atomic lists of the same length. Does not perform

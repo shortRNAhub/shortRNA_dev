@@ -13,7 +13,7 @@ getOverlapValidity(sources, rules = defaultAssignRules())
 \item{rules}{Assignment rules (see \code{\link{defaultAssignmentRules}})}
 }
 \value{
-Data table (same format as `sources`)
+Data table (same format as \code{sources})
 }
 \description{
 getOverlapValidity

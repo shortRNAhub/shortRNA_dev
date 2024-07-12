@@ -20,7 +20,7 @@ indexRsubread(
 (optional if want to build genome other than mm9, mm10, hg19 or hg38).}
 
 \item{refGenome}{mm9/mm10/hg19/hg38.
-`fasta` file is downloaded from gencode (https://gencodegenes.org)}
+\code{fasta} file is downloaded from gencode (https://gencodegenes.org)}
 
 \item{gencodeRelease}{Release of the genome to be downloaded.}
 
@@ -28,14 +28,14 @@ indexRsubread(
 
 \item{basename}{Basename for the Rsubread index.}
 
-\item{extraFasta}{`vector`. Additional fasta files location.}
+\item{extraFasta}{\code{vector}. Additional fasta files location.}
 
 \item{gzExtra}{if additional fasta files are gzip. Default: FALSE.}
 
 \item{...}{Other options for \code{\link[Rsubread]{buildindex}}.}
 }
 \value{
-`index` for aligning fastq files with Rsubread.
+\code{index} for aligning fastq files with Rsubread.
 }
 \description{
 Build index for Rsubread

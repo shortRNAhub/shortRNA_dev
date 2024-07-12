@@ -11,8 +11,11 @@ dupPlotDF(json)
 }
 \value{
 An interactive plot
-
-#' @examples
+}
+\description{
+Reads duplication data frame from JSON file
+}
+\examples{
 # Input
 fq1 <- system.file("extdata", "Fox3_Std_small.fq.gz", package = "Rfastp")
 outDir <- tempdir()
@@ -23,9 +26,6 @@ df <- dupPlotDF(qc_res$json)
 
 # Output
 df
-}
-\description{
-Reads duplication data frame from JSON file
 }
 \author{
 Deepak Tanwar (tanward@ethz.ch)

@@ -8,7 +8,7 @@ writeUniqueFasta(countMatrix, fasta_file = "unique_fragments.fasta")
 }
 \arguments{
 \item{countMatrix}{A fragment count matrix, with sequences as row.names, as
-produced by `fastq2SeqCountMatrix()`}
+produced by \code{fastq2SeqCountMatrix()}}
 
 \item{fasta_file}{The filepath to which to save the fasta file.}
 }

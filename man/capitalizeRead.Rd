@@ -13,7 +13,7 @@ capitalizeRead(read, cigar, indels = FALSE)
 
 \item{indels}{Logical; whether to also indicate insertions/deletions
 (default FALSE). This cannot be enablied if the read already includes
- any hyphen ('-').}
+any hyphen ('-').}
 }
 \value{
 A character vector of length 1 containing the formatted sequence.

@@ -17,7 +17,7 @@ addReadsToTree(
 \arguments{
 \item{fL}{factorList of the annotation}
 
-\item{mappedFeaturesDF}{`DFrame` with Sequences and transcript IDs}
+\item{mappedFeaturesDF}{\code{DFrame} with Sequences and transcript IDs}
 
 \item{featuresCol}{Feature name column}
 
@@ -25,11 +25,11 @@ addReadsToTree(
 
 \item{unassigned}{If unassigned reads to be included in the tree or not}
 
-\item{extraTreeBranch}{Additional sequences as `FactorList` to be added to
-the tree. One can obtain unaligned reads using `getReadsFromBam` to obtain
+\item{extraTreeBranch}{Additional sequences as \code{FactorList} to be added to
+the tree. One can obtain unaligned reads using \code{getReadsFromBam} to obtain
 reads from bam files.}
 
-\item{...}{Other parameters to be passed to `fList2tree`}
+\item{...}{Other parameters to be passed to \code{fList2tree}}
 }
 \description{
 Add reads to the tree
